@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.upperCase {
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.box {
+  border: 1px solid #CED4D9;
+  width: 300px;
+  padding: 10px;
+  color: #879097;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+details {
+  cursor: pointer;
+}
+
+summary.box {
+  width: 290px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 1px solid #98EBA8;
+  border-radius: 20px;
+  background-color: #EBFAEF;
+  color: #3ABF5E;
+  text-transform: uppercase;
+  height: 30px;
+  font-size: 1.2rem;
+  padding: 0 15px;
+}
+
+.lesson {
+  padding-left: 10px;
+}
+
+.topic {
+  margin-left: 20px;
+  width: 270px;
+  position: relative;
+}
+
+.title {
+  padding: 10px 5px 5px 23px;
+  font-weight: bold;
+}
+
+.rightAlign {
+  text-align: right;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background-color: transparent;
+}
+
+summary {
+  position: relative;
+}
+
+.mainView {
+  margin-left: 30px;
+  background-color: #fff;
+  width: 100%;
+  padding: 30px;
+}
+
+.mainView>*:nth-child(even) {
+  margin-bottom: 25px;
+}
+
+label {
+  color: #4381e2;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #E9ECEF;
+  padding: 10px;
+  font-family: inherit;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: #7282a1;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #4381e2;
+  font-weight: bold;
+}
+
+/* HAM NAV STYLES */
+
+input[type="checkbox"] {
+  /*hide the input, we don't need to see it */
+  display: none;
+}
+
+.treeComponent {
+  transition: all 0.8s;
+  background: #F0F3F5;
+}
+
+.toggle {
+  align-self: start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  cursor: pointer;
+  display: none;
+  padding: 10px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #3ABF5E;
+  margin: 6px 0;
+  transition: all 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.hide {
+  left: -100%;
+}
+
+@media (max-width: 840px) {
+  .toggle {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  input[type="checkbox"]:checked~.treeComponent {
+    left: 0px;
+    /*when the checkbox is checked, show the menu*/
+  }
+  .treeComponent {
+    position: fixed;
+    z-index: 10;
+    left: -100%;
+    padding: 50px 10px;
   }
 }
