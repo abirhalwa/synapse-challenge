@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect, BrowserRouter as Router  } from 'react-router-dom';
+import { Route, Switch, Redirect, BrowserRouter as Router } from 'react-router-dom';
 import { Tree } from './components/Tree';
 import { AddLesson } from './components/AddLesson';
 import { EditLesson } from './components/EditLesson';
@@ -7,8 +7,9 @@ import { AddTopic } from './components/AddTopic';
 import { EditTopic } from './components/EditTopic';
 import { Message } from './components/Message';
 import { GlobalProvider } from './context/GlobalState';
-
 import './App.css';
+
+//to change the hamburger icon 
 const changeIcon = (event) => {
   const menu = document.getElementsByClassName('treeComponent')[0];
   if (menu.style.left == "0px") {
@@ -16,7 +17,7 @@ const changeIcon = (event) => {
   }
   else if (menu.style.left == "-100%") {
     menu.style.left = "0px";
-    }
+  }
 
   if (event.target.tagName === "LABEL") {
     event.target.classList.toggle("change");
@@ -25,9 +26,10 @@ const changeIcon = (event) => {
     event.target.parentElement.classList.toggle("change");
   }
 }
-function App() { 
+
+function App() {
   return (
-      <GlobalProvider>
+    <GlobalProvider>
       <div className="app">
         <Router>
           {/* <!-- hamburger menu icon --> */}
@@ -44,15 +46,15 @@ function App() {
             <Route exact path="/">
               <Redirect to="/home/first" />
             </Route>
-            <Route path="/home/:message?" exact component={Message}  />
+            <Route path="/home/:message?" exact component={Message} />
             <Route path="/addLesson" component={AddLesson} exact />
             <Route path="/editLesson/:id" component={EditLesson} exact />
             <Route path="/addTopic/:id" component={AddTopic} exact />
             <Route path="/editTopic/:id" component={EditTopic} exact />
           </Switch>
         </Router>
-        </div>
-      </GlobalProvider>
+      </div>
+    </GlobalProvider>
   );
 }
 export default App;

@@ -16,7 +16,7 @@ export const GlobalProvider = ({ children }) => {
             type: "REMOVE_LESSON",
             payload: id
         });
-      
+
     }
 
     function addLesson(lesson) {

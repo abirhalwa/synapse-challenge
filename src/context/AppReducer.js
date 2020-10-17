@@ -3,7 +3,7 @@ export default (state, action) => {
         case "REMOVE_LESSON":
             return {
                 ...state,
-                topics: state.topics.filter(topic=> topic.lessonId !== action.payload),
+                topics: state.topics.filter(topic => topic.lessonId !== action.payload),
                 lessons: state.lessons.filter(lesson => lesson.id !== action.payload)
             };
         case "ADD_LESSON":
